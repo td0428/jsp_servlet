@@ -6,7 +6,8 @@ width:100px;
 margin: 30px;
 }
 .select{
-	margin-right: 26px;
+	margin-top: 20px;
+	margin-right: 16px;
 	margin-left: 22px;;
 }
 #main{ 
@@ -18,4 +19,10 @@ margin: 30px;
 }
 .finsh{
 	font-size: 50px;
+}
+.line{
+	display: flex;
+}
+.finish{
+	color: red;
 }

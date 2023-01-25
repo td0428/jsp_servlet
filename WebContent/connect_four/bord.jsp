@@ -12,32 +12,34 @@
 </head>
 <body>
 <!-- Connect_Fourから受け取った値を変数に入れる -->
+	<% List<String> bord = (List<String>)request.getAttribute("bord");%>
 	<%boolean NoStart = (boolean)request.getAttribute("NoStart");%>
 	<%boolean end = (boolean)request.getAttribute("ColumnEnd"); %>
 	<%int battle = (int)request.getAttribute("battle"); %>
-	<% List<String> bord = (List<String>)request.getAttribute("bord");
-	int a = 0;%>
-	
-	<!-- ボタンを選択せずに決定を押した場合に文字を表示 -->
-		<% if(NoStart){%>
-	<div class="error">ボタンが選択されませんでした</div>
-	<% }%>
-	
-	<!-- 列に置けなくなった場合に文字を表示 -->
-	<% if(end){%>
-	<div class="error">この列にはもう置けません</div>
-	<% }%>
+	<%int finish1 = (int)request.getAttribute("finish1"); %>
+	<%int finish2 = (int)request.getAttribute("finish2"); %>
+	<%int finish3 = (int)request.getAttribute("finish3"); %>
+	<%int finish4 = (int)request.getAttribute("finish4"); %>
+	<%int finish_count = 0; %>
 	
 	<!-- 配列を7つに区切って表示 -->
 <div id="main">
-	<% for(String str: bord) {
-		if(a%7 ==0){%>
-			<br>
-		<% }%>
-		<%=str %>
-		<%a++; 
-	} %>
+<% for(int i = 0;i<6;i++){%>
+	<div class="line">
+	<%for(int j = 0;j<7;j++){%>
+		<%if(finish_count == finish1 || finish_count == finish2 || finish_count == finish3 || finish_count == finish4){%>
+			<div class="finish"><%=bord.get(0) %></div>
+		<%}else{%>
+			<div><%=bord.get(0) %></div>
+		<%} %>
+		<%finish_count++; %>
+		<%bord.remove(0); %>
+		
+	<% }%>
+	</div>
+<% }%>
 </div>
+
 
 <!-- 勝敗がついていなければ続き、勝敗がつけば勝ちを表示 -->
 <%if(battle == 0){%>
@@ -57,6 +59,16 @@
 <%}else{%>
 	<div class="finsh">×の勝ち</div>
 <%} %>
+
+	<!-- ボタンを選択せずに決定を押した場合に文字を表示 -->
+		<% if(NoStart){%>
+	<div class="error">ボタンが選択されませんでした</div>
+	<% }%>
+	
+	<!-- 列に置けなくなった場合に文字を表示 -->
+	<% if(end){%>
+	<div class="error">この列にはもう置けません</div>
+	<% }%>
 	
 	
 </body>

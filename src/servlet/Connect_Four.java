@@ -17,6 +17,7 @@ public class Connect_Four extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	ArrayList<String> bord = new ArrayList<String>();
+	ArrayList<String> bord1 = new ArrayList<String>();
 
 	static int column_0 = 35, column_1 = 36, column_2 = 37, column_3 = 38, column_4 = 39, column_5 = 40, column_6 = 41;
 	static int turn = -1;
@@ -24,6 +25,7 @@ public class Connect_Four extends HttpServlet {
 	boolean ColumnEnd = false;
 	int battle = 0;
 	Boolean NoStart = false;
+	int finish1 = -1 ,finish2 = -1 ,finish3 = -1 ,finish4 = -1 ;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -36,8 +38,13 @@ public class Connect_Four extends HttpServlet {
 				bord.add("[　]");
 			}
 			turn++;
+			ArrayList<String> bord1 = new ArrayList<String>(bord);
+			request.setAttribute("finish1",finish1);
+			request.setAttribute("finish2",finish2);
+			request.setAttribute("finish3",finish3);
+			request.setAttribute("finish4",finish4);
 			request.setAttribute("NoStart", NoStart);
-			request.setAttribute("bord", bord);
+			request.setAttribute("bord", bord1);
 			request.setAttribute("battle", battle);
 			request.setAttribute("ColumnEnd", ColumnEnd);
 			request.getRequestDispatcher("connect_four/bord.jsp").forward(request, response);
@@ -46,8 +53,13 @@ public class Connect_Four extends HttpServlet {
 		//radiobuttonを選択しなかったら何もしない
 		if (request.getParameter("radiobutton") == null) {
 			NoStart = true;
+			ArrayList<String> bord1 = new ArrayList<String>(bord);
+			request.setAttribute("finish1",finish1);
+			request.setAttribute("finish2",finish2);
+			request.setAttribute("finish3",finish3);
+			request.setAttribute("finish4",finish4);
 			request.setAttribute("NoStart", NoStart);
-			request.setAttribute("bord", bord);
+			request.setAttribute("bord", bord1);
 			request.setAttribute("battle", battle);
 			request.setAttribute("ColumnEnd", ColumnEnd);
 			request.getRequestDispatcher("connect_four/bord.jsp").forward(request, response);
@@ -55,6 +67,7 @@ public class Connect_Four extends HttpServlet {
 
 		//radiobuttonを選択すると、ここから下が実行される
 		NoStart = false;
+
 
 		//radiobuttonで選択した列がselectに入る
 		String select = request.getParameter("radiobutton");
@@ -68,10 +81,15 @@ public class Connect_Four extends HttpServlet {
 		nana1();
 		nana2();
 
+		ArrayList<String> bord1 = new ArrayList<String>(bord);
+		request.setAttribute("finish1",finish1);
+		request.setAttribute("finish2",finish2);
+		request.setAttribute("finish3",finish3);
+		request.setAttribute("finish4",finish4);
 		request.setAttribute("NoStart", NoStart);
 		request.setAttribute("battle", battle);
 		request.setAttribute("ColumnEnd", ColumnEnd);
-		request.setAttribute("bord", bord);
+		request.setAttribute("bord", bord1);
 		request.getRequestDispatcher("connect_four/bord.jsp").forward(request, response);
 	}
 
@@ -193,6 +211,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 2).equals("[" + maru + "]")) {
 							if (bord.get(i + 3).equals("[" + maru + "]")) {
 								battle = 1;
+								finish1 = i;
+								finish2 = i + 1;
+								finish3 = i + 2;
+								finish4 = i + 3;
 							}
 
 						}
@@ -204,6 +226,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 2).equals("[" + batu + "]")) {
 							if (bord.get(i + 3).equals("[" + batu + "]")) {
 								battle = 2;
+								finish1 = i;
+								finish2 = i + 1;
+								finish3 = i + 2;
+								finish4 = i + 3;
 							}
 
 						}
@@ -226,6 +252,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 14).equals("[" + maru + "]")) {
 							if (bord.get(i + 21).equals("[" + maru + "]")) {
 								battle = 1;
+								finish1 = i;
+								finish2 = i + 7;
+								finish3 = i + 14;
+								finish4 = i + 21;
 							}
 
 						}
@@ -237,6 +267,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 14).equals("[" + batu + "]")) {
 							if (bord.get(i + 21).equals("[" + batu + "]")) {
 								battle = 2;
+								finish1 = i;
+								finish2 = i + 7;
+								finish3 = i + 14;
+								finish4 = i + 21;
 							}
 
 						}
@@ -261,6 +295,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 16).equals("[" + maru + "]")) {
 							if (bord.get(i + 24).equals("[" + maru + "]")) {
 								battle = 1;
+								finish1 = i;
+								finish2 = i + 8;
+								finish3 = i + 16;
+								finish4 = i + 24;
 							}
 
 						}
@@ -272,6 +310,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 16).equals("[" + batu + "]")) {
 							if (bord.get(i + 24).equals("[" + batu + "]")) {
 								battle = 2;
+								finish1 = i;
+								finish2 = i + 8;
+								finish3 = i + 16;
+								finish4 = i + 24;
 							}
 
 						}
@@ -297,6 +339,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 12).equals("[" + maru + "]")) {
 							if (bord.get(i + 18).equals("[" + maru + "]")) {
 								battle = 1;
+								finish1 = i;
+								finish2 = i + 6;
+								finish3 = i + 12;
+								finish4 = i + 18;
 							}
 
 						}
@@ -308,6 +354,10 @@ public class Connect_Four extends HttpServlet {
 						if (bord.get(i + 12).equals("[" + batu + "]")) {
 							if (bord.get(i + 18).equals("[" + batu + "]")) {
 								battle = 2;
+								finish1 = i;
+								finish2 = i + 6;
+								finish3 = i + 12;
+								finish4 = i + 18;
 							}
 
 						}

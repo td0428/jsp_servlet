@@ -10,7 +10,7 @@
 
 <body>
 	<form action="<%=request.getContextPath()%>/Connect_Four" method="post">
-		<input class="button" type="submit" value="開始">
+		<input class="button" type="submit" value="ゲームスタート">
 	</form>
 </body>
 </html>
