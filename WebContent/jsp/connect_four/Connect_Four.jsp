@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Connect_Four</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/connect_four/css/style.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/jsp/connect_four/css/style.css">
 </head>
 
 <body>

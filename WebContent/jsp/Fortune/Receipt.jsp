@@ -13,7 +13,7 @@ int strCount = (int) request.getAttribute("count");
 <meta charset="UTF-8">
 <title>運勢結果</title>
 <link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/Fortune/css/test.css">
+	href="<%=request.getContextPath()%>/jsp/Fortune/css/test.css">
 </head>
 <body>
 	<h2>

@@ -50,6 +50,6 @@ public class SampleServlet extends HttpServlet {
 		request.setAttribute("fortune", fortune);
 		request.setAttribute("count", count);
 
-		request.getRequestDispatcher("Fortune/Receipt.jsp").forward(request, response);
+		request.getRequestDispatcher("jsp/Fortune/Receipt.jsp").forward(request, response);
 	}
 }

@@ -47,7 +47,7 @@ public class Connect_Four extends HttpServlet {
 			request.setAttribute("bord", bord1);
 			request.setAttribute("battle", battle);
 			request.setAttribute("ColumnEnd", ColumnEnd);
-			request.getRequestDispatcher("connect_four/bord.jsp").forward(request, response);
+			request.getRequestDispatcher("jsp/connect_four/bord.jsp").forward(request, response);
 		}
 
 		//radiobuttonを選択しなかったら何もしない
@@ -62,7 +62,7 @@ public class Connect_Four extends HttpServlet {
 			request.setAttribute("bord", bord1);
 			request.setAttribute("battle", battle);
 			request.setAttribute("ColumnEnd", ColumnEnd);
-			request.getRequestDispatcher("connect_four/bord.jsp").forward(request, response);
+			request.getRequestDispatcher("jsp/connect_four/bord.jsp").forward(request, response);
 		}
 
 		//radiobuttonを選択すると、ここから下が実行される
@@ -90,7 +90,7 @@ public class Connect_Four extends HttpServlet {
 		request.setAttribute("battle", battle);
 		request.setAttribute("ColumnEnd", ColumnEnd);
 		request.setAttribute("bord", bord1);
-		request.getRequestDispatcher("connect_four/bord.jsp").forward(request, response);
+		request.getRequestDispatcher("jsp/connect_four/bord.jsp").forward(request, response);
 	}
 
 	public void game(String game) {
