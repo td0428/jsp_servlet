@@ -19,7 +19,7 @@
 	<%int finish1 = (int)request.getAttribute("finish1"); %>
 	<%int finish2 = (int)request.getAttribute("finish2"); %>
 	<%int finish3 = (int)request.getAttribute("finish3"); %>
-	<%int finish4 = (int)request.getAttribute("finish4"); %>
+	<%int finish4 = (int)request.getAttribute("finish4"); %> 
 	<%int finish_count = 0; %>
 	
 	<!-- 配列を7つに区切って表示 -->
