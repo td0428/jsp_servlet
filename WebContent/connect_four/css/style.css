@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.button{
+height:100px;
+width:100px;
+margin: 30px;
+}
+.select{
+	margin-right: 26px;
+	margin-left: 22px;;
+}
+#main{ 
+	font-size: 30px;
+}
+.error{
+	font-size: 20px;
+	color:red;
+}
+.finsh{
+	font-size: 50px;
+}
