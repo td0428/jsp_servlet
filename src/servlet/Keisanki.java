@@ -28,7 +28,7 @@ public class Keisanki extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String number = request.getParameter("number");
+		String number = request.getParameter("ten");
 
 		request.setAttribute("number", number);
 		request.getRequestDispatcher("jsp/keisanki/print.jsp").forward(request, response);
