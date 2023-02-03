@@ -22,14 +22,23 @@
 	<h2>迷路</h2>
 	<form action="<%=request.getContextPath()%>/Meiro" method="post"
 		name="meiro">
-		<h3>＊奇数のみ選択可能です(２１以上がおすすめ)</h3>
-		<input type="text" name="math"> <input class="button"
-			type="submit" value="ゲームスタート" onclick="return check()">
+		<h3>5以上の数値を入力してください（奇数のみ選択可能です。２１以上がおすすめ)</h3>
+		<input type="text" name="math" id="meiro"> <input
+			class="button" type="submit" value="ゲームスタート" onclick="return check()">
 	</form>
+
+	<!-- 続き -->
 	<script>
 		function check() {
-			if (meiro.math.value % 2 === 0) {
-				alert("偶数が選択されています");
+			var num = document.getElementById('meiro').value;
+			if (isNaN(num)) {
+				alert("数値(奇数)を入力してください");
+				return false;
+			} else if (num < 5) {
+				alert("5以上の奇数を入力してください");
+				return false;
+			} else if (num % 2 === 0) {
+				alert("奇数を入力してください");
 				return false;
 			} else {
 				return true;

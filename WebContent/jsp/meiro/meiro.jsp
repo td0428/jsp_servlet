@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>迷路</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/jsp/meiro/css/style.css">
 </head>
 <body>
 	<%
@@ -12,17 +13,14 @@
 	int math = (int)request.getAttribute("math");
 	%>
 
-	<%
-	int count = 0;
-	for (String[] a : bord) {
-		for(String b : a){
-			if (count % math == 0) {%>
-				<br> 
-			<%} %>
-		<%=b %>
-		<%count++;
-		}
-	}
-	 %>
+
+<% for(int i = 0;i<math;i++){%>
+	<div class="line">
+	<%for(int j = 0;j<math;j++){%>
+			<div><%=bord[i][j] %></div>
+	<% }%>
+	</div>
+<% }%>
+
 </body>
 </html>

@@ -41,7 +41,7 @@
 </div>
 
 
-<!-- 勝敗がついていなければ続き、勝敗がつけば勝ちを表示 -->
+<!-- 勝敗がついていなければボタン、勝敗がつけば勝ちを表示 -->
 <%if(battle == 0){%>
 	<form action="<%=request.getContextPath()%>/Connect_Four" method="post">
 		<input class="select" type="radio" name="radiobutton" value="0">
