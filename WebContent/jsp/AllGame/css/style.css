@@ -1,0 +1,5 @@
+@charset "UTF-8";
+.border {
+border-bottom:dashed #ff0000 3px;
+padding-bottom:5px;
+}
