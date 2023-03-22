@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class Connect_Four
- */ 
+ */
 @WebServlet("/Connect_Four")
 public class Connect_Four extends HttpServlet {
 	private static final long serialVersionUID = 1L;
